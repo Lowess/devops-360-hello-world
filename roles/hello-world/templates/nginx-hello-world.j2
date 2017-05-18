@@ -1,6 +1,6 @@
 
 server {
-    listen :{{ hello_world_port }};
+    listen *:{{ hello_world_port }};
     root {{ hello_world_document_root }};
 
     location / {
