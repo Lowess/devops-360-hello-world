@@ -12,12 +12,12 @@ pip install ansible==2.3.0.0
 
 ## 1. Write the `hello-world` automation
 
-You should:
+__You should:__
 * Create an inventory file to interract with `ubuntu` VMs
 * Use a role named `hello-world`
 * Use a playbook named `hello-world.yml`
-* Install `apache2` and configure a `<VirtualHost *:8080>` in `/etc/apache2/sites-available/hello-world`
-    * `DocumentRoot` should be set to `/var/www/hello-world`
+* Install `nginx` and configure a `server block` in `/etc/nginx/sites-available/hello-world` (This resource can be useful: [How To Set Up nginx Virtual Hosts ](https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-virtual-hosts-server-blocks-on-ubuntu-12-04-lts--3))
+* `root` should be set to `/opt/hello-world`
 * Deploy an index.html file from a template that says:
 ```
 Hello World from <hello_world_msg>
