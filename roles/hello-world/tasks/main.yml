@@ -9,6 +9,7 @@
   apt:
     state: present
     name: nginx
+    cache_valid: 3600
     update_cache: yes
 
 - name: Make sure sites-* folders exist
@@ -17,7 +18,7 @@
     path: "/etc/nginx/{{ item }}"
     owner: root
     group: root
-    mode: 755
+    mode: 0755
   with_items:
     - sites-available
     - sites-enabled
@@ -32,7 +33,7 @@
     path: "{{ hello_world_document_root }}"
     owner: "{{ hello_world_user }}"
     group: "{{ hello_world_group }}"
-    mode: 755
+    mode: 0755
 
 - name: Deploy the Hello-World index.html
   template:
