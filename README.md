@@ -15,7 +15,7 @@ pip install ansible==2.3.0.0
 You should:
 * Create an inventory file to interract with `ubuntu` VMs
 * Use a role named `hello-world`
-* Use a playbook used `hello-world.yml`
+* Use a playbook named `hello-world.yml`
 * Install `apache2` and configure a `<VirtualHost *:8080>` in `/etc/apache2/sites-available/hello-world`
     * `DocumentRoot` should be set to `/var/www/hello-world`
 * Deploy an index.html file from a template that says:
