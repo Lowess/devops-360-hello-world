@@ -23,6 +23,14 @@
     - sites-available
     - sites-enabled
 
+- name: Make sure defaults configuration is absent
+  file:
+    state: absent
+    path: "/etc/nginx/{{ item }}/default"
+  with_items:
+    - sites-enabled
+    - sites-available
+
 ################################################################################
 ### Deploy Hello-World site
 ################################################################################
