@@ -50,7 +50,7 @@
 - name: Deploy the hello-world server configuration
   template:
     src: nginx-hello-world.j2
-    dest: /etc/nginx/sites-available/hello-world.conf
+    dest: /etc/nginx/sites-available/hello-world
     owner: root
     group: root
     mode: 0644
