@@ -1,6 +1,6 @@
-# DevOps 360° HellWorld
+# DevOps 360° Hello-World
 
-DevOps 360° HelloWorld is the first playbook introduction to automation with Ansible. For more details about the project, please check: http://slides.com/floriandambrine/devops360
+DevOps 360° Hello-World is the first playbook introduction to automation with Ansible. For more details about the project, please check: http://slides.com/floriandambrine/devops360
 
 ## 0. Setup the Ansible controller
 
