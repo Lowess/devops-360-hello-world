@@ -1,0 +1,62 @@
+---
+# tasks file for hello-world
+#
+################################################################################
+### Install dependencies
+################################################################################
+
+- name: Install Nginx
+  apt:
+    state: present
+    name: nginx
+    update_cache: yes
+
+- name: Make sure sites-* folders exist
+  file:
+    state: directory
+    path: "/etc/nginx/{{ item }}"
+    owner: root
+    group: root
+    mode: 755
+  with_items:
+    - sites-available
+    - sites-enabled
+
+################################################################################
+### Deploy Hello-World site
+################################################################################
+
+- name: Make the Hello-World site folder
+  state: directory
+    path: "{{ hello_world_document_root }}"
+    owner: "{{ hello_world_user }}"
+    group: "{{ hello_world_group }}"
+    mode: 755
+
+- name: Deploy the Hello-World index.html
+  template:
+    src: index.html.j2
+    path: "{{ hello_world_document_root }}/index.html"
+    owner: "{{ hello_world_user }}"
+    group: "{{ hello_world_group }}"
+    mode: 0644
+
+################################################################################
+### Configure Hello-World Nginx
+################################################################################
+
+- name: Deploy the hello-world server configuration
+  template:
+    src: nginx-hello-world.j2
+    dest: /etc/nginx/sites-available/hello-world.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Symlink the hello-world server configuration
+  file:
+    state: link
+    src: /etc/nginx/sites-available/hello-world
+    path: /etc/nginx/sites-enabled/hello-world
+    owner: root
+    group: root

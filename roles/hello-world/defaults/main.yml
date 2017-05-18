@@ -1,0 +1,11 @@
+---
+# defaults file for hello-world
+#
+hello_world_msg: 'World'
+
+hello_world_port: 8080
+hello_world_document_root: /var/www/hello-world
+
+hello_world_user: www-data
+hello_world_group: www-data
+

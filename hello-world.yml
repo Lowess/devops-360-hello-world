@@ -1,0 +1,12 @@
+################################################################################
+# > My first playbook - Hello World
+#
+# @author: Florian DAMBRINE <@Lowess>
+################################################################################
+---
+
+- name: Configure servers to say Hello-world
+  hosts: all
+
+  roles:
+    - hello-world
