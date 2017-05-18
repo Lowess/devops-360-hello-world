@@ -27,7 +27,8 @@
 ################################################################################
 
 - name: Make the Hello-World site folder
-  state: directory
+  file:
+    state: directory
     path: "{{ hello_world_document_root }}"
     owner: "{{ hello_world_user }}"
     group: "{{ hello_world_group }}"
@@ -36,7 +37,7 @@
 - name: Deploy the Hello-World index.html
   template:
     src: index.html.j2
-    path: "{{ hello_world_document_root }}/index.html"
+    dest: "{{ hello_world_document_root }}/index.html"
     owner: "{{ hello_world_user }}"
     group: "{{ hello_world_group }}"
     mode: 0644
