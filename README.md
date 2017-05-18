@@ -18,9 +18,9 @@ __You should:__
 * Use a playbook named `hello-world.yml`
 * Install `nginx` and configure a `server block` in `/etc/nginx/sites-available/hello-world` (This resource can be useful: [How To Set Up nginx Virtual Hosts ](https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-virtual-hosts-server-blocks-on-ubuntu-12-04-lts--3))
 * `root` should be set to `/opt/hello-world`
-* Deploy an index.html file from a template that says:
+* Deploy an index.html file in `/opt/hello-world` from a template that says:
 ```
-Hello World from <hello_world_msg>
+Hello <hello_world_msg>!
 ```
+* `hello_world_msg` should default to `World`
 * Adjust the `group_vars`, `host_vars` so that `ubuntu1` `ubuntu2` and `ubuntu3` VMs display a different message.
-
