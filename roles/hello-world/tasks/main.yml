@@ -62,3 +62,8 @@
     path: /etc/nginx/sites-enabled/hello-world
     owner: root
     group: root
+
+- name: Restart Nginx
+  service:
+    state: restarted
+    name: nginx
