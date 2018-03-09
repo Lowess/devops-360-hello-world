@@ -7,7 +7,7 @@ DevOps 360° Hello-World is the first playbook introduction to automation with A
 ```
 sudo yum install python-pip python-devel gcc git
 sudo pip install -U pip
-pip install ansible==2.3.0.0
+pip install ansible==2.4.3.0
 ```
 
 ## 1. Write the `hello-world` automation
